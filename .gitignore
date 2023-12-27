@@ -1,0 +1,2 @@
+venv/ .vscode/
+datasets/PathMNIST/pathmnist.npz
