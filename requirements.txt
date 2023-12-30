@@ -2,3 +2,4 @@ medmnist
 torch
 scikit-learn
 tqdm
+seaborn

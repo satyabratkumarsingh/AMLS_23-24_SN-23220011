@@ -1,18 +1,34 @@
+INFO: 2023-12-30 08:32:25 train_models(88) -- Model : svm, fitted, best score is 0.9706893556342239
+INFO: 2023-12-30 08:32:25 train_models(95) -- ========= Classification Report ==========
+INFO: 2023-12-30 08:32:25 train_models(96) --               precision    recall  f1-score   support
 
-INFO: 2023-12-28 13:04:18 download_images(29) -- Downloading images PneumoniaMNIST ..... 
-INFO: 2023-12-28 13:04:18 train_model(46) -- Starting training of model using SVM ..... 
-INFO: 2023-12-28 13:04:18 transform_with_pca(34) -- Reducing features with PCA .....
-INFO: 2023-12-28 13:04:25 train_model(67) -- [[-0.55864845  0.70680258  1.39758755 ...  0.23994674 -0.02388302
-  -1.02450746]
- [-0.84993691  0.40291781 -1.27338606 ... -0.32783943 -1.06113192
-  -1.23620332]
- [-1.14800476  0.90482319 -0.0225966  ...  0.60843411 -0.78355398
-  -0.45618249]
- ...
- [ 1.11425233 -0.77308187 -0.7354161  ... -2.19739932  1.51087808
-   0.12410926]
- [ 0.53326843  0.13215005 -1.36789197 ...  1.17389502  0.39247554
-  -0.12463726]
- [ 0.17069063 -1.17341034  1.969545   ...  0.78751288  0.07302708
-  -0.74509734]]
-INFO: 2023-12-28 13:04:27 transform_with_pca(34) -- Reducing features with PCA .....
+           0       0.96      0.93      0.94       135
+           1       0.97      0.99      0.98       389
+
+    accuracy                           0.97       524
+   macro avg       0.97      0.96      0.96       524
+weighted avg       0.97      0.97      0.97       524
+
+INFO: 2023-12-30 08:32:25 train_models(98) -- ========= AUC ==========
+INFO: 2023-12-30 08:32:25 train_models(100) -- 12928.0
+INFO: 2023-12-30 08:32:25 train_models(102) -- ========= Confusion Matrix ==========
+INFO: 2023-12-30 08:32:25 train_models(104) -- [[125  10]
+ [  5 384]]
+INFO: 2023-12-30 08:32:25 train_models(81) -- Fitting model : random_forest
+INFO: 2023-12-30 08:32:26 train_models(88) -- Model : random_forest, fitted, best score is 0.9258684915311217
+INFO: 2023-12-30 08:32:26 train_models(95) -- ========= Classification Report ==========
+INFO: 2023-12-30 08:32:26 train_models(96) --               precision    recall  f1-score   support
+
+           0       0.89      0.80      0.84       135
+           1       0.93      0.97      0.95       389
+
+    accuracy                           0.92       524
+   macro avg       0.91      0.88      0.90       524
+weighted avg       0.92      0.92      0.92       524
+
+INFO: 2023-12-30 08:32:26 train_models(98) -- ========= AUC ==========
+INFO: 2023-12-30 08:32:26 train_models(100) -- 13053.5
+INFO: 2023-12-30 08:32:26 train_models(102) -- ========= Confusion Matrix ==========
+INFO: 2023-12-30 08:32:26 train_models(104) -- [[108  27]
+ [ 13 376]]
+INFO: 2023-12-30 08:32:26 train_models(109) -- [{'model': 'svm', 'best_score': 0.9706893556342239, 'best_params': {'C': 10, 'kernel': 'rbf'}}, {'model': 'random_forest', 'best_score': 0.9258684915311217, 'best_params': {'n_estimators': 5}}]
