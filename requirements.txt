@@ -3,3 +3,6 @@ torch
 scikit-learn
 tqdm
 seaborn
+numpy
+pandas
+scipy

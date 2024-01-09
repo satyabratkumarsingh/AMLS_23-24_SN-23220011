@@ -1,34 +1,113 @@
-INFO: 2023-12-30 08:32:25 train_models(88) -- Model : svm, fitted, best score is 0.9706893556342239
-INFO: 2023-12-30 08:32:25 train_models(95) -- ========= Classification Report ==========
-INFO: 2023-12-30 08:32:25 train_models(96) --               precision    recall  f1-score   support
 
-           0       0.96      0.93      0.94       135
-           1       0.97      0.99      0.98       389
-
-    accuracy                           0.97       524
-   macro avg       0.97      0.96      0.96       524
-weighted avg       0.97      0.97      0.97       524
-
-INFO: 2023-12-30 08:32:25 train_models(98) -- ========= AUC ==========
-INFO: 2023-12-30 08:32:25 train_models(100) -- 12928.0
-INFO: 2023-12-30 08:32:25 train_models(102) -- ========= Confusion Matrix ==========
-INFO: 2023-12-30 08:32:25 train_models(104) -- [[125  10]
+INFO: 2024-01-08 21:30:45 download_images(153) -- Downloading images PneumoniaMNIST ..... 
+INFO: 2024-01-08 21:30:45 train_models(70) -- Starting training of model using SVM, Random Forest etc..... 
+INFO: 2024-01-08 21:30:45 train_models(81) --  ******* The shape of training dataset is : (4708, 28, 28) ****
+INFO: 2024-01-08 21:30:45 train_models(83) --  ========== The shape of training dataset after transformation : (4708, 784) ****
+INFO: 2024-01-08 21:30:45 train_models(97) -- Fitting model : svm
+INFO: 2024-01-08 21:40:14 train_models(102) -- Model : svm, fitted, best score is 0.9706893556342239
+INFO: 2024-01-08 21:40:14 train_models(109) -- ========= Classification Report for model {SVC(gamma='auto')}==========
+INFO: 2024-01-08 21:40:14 train_models(110) -- {'0': {'precision': 0.9615384615384616, 'recall': 0.9259259259259259, 'f1-score': 0.9433962264150944, 'support': 135.0}, '1': {'precision': 0.9746192893401016, 'recall': 0.987146529562982, 'f1-score': 0.9808429118773946, 'support': 389.0}, 'accuracy': 0.9713740458015268, 'macro avg': {'precision': 0.9680788754392815, 'recall': 0.956536227744454, 'f1-score': 0.9621195691462445, 'support': 524.0}, 'weighted avg': {'precision': 0.9712492287423508, 'recall': 0.9713740458015268, 'f1-score': 0.9711953879510387, 'support': 524.0}}
+INFO: 2024-01-08 21:40:14 train_models(117) -- ========= AUC ==========
+INFO: 2024-01-08 21:40:14 train_models(119) -- 12928.0
+INFO: 2024-01-08 21:40:14 train_models(121) -- ========= Confusion Matrix ==========
+INFO: 2024-01-08 21:40:14 train_models(123) -- [[125  10]
  [  5 384]]
-INFO: 2023-12-30 08:32:25 train_models(81) -- Fitting model : random_forest
-INFO: 2023-12-30 08:32:26 train_models(88) -- Model : random_forest, fitted, best score is 0.9258684915311217
-INFO: 2023-12-30 08:32:26 train_models(95) -- ========= Classification Report ==========
-INFO: 2023-12-30 08:32:26 train_models(96) --               precision    recall  f1-score   support
-
-           0       0.89      0.80      0.84       135
-           1       0.93      0.97      0.95       389
-
-    accuracy                           0.92       524
-   macro avg       0.91      0.88      0.90       524
-weighted avg       0.92      0.92      0.92       524
-
-INFO: 2023-12-30 08:32:26 train_models(98) -- ========= AUC ==========
-INFO: 2023-12-30 08:32:26 train_models(100) -- 13053.5
-INFO: 2023-12-30 08:32:26 train_models(102) -- ========= Confusion Matrix ==========
-INFO: 2023-12-30 08:32:26 train_models(104) -- [[108  27]
- [ 13 376]]
-INFO: 2023-12-30 08:32:26 train_models(109) -- [{'model': 'svm', 'best_score': 0.9706893556342239, 'best_params': {'C': 10, 'kernel': 'rbf'}}, {'model': 'random_forest', 'best_score': 0.9258684915311217, 'best_params': {'n_estimators': 5}}]
+INFO: 2024-01-08 21:40:14 train_models(97) -- Fitting model : random_forest
+INFO: 2024-01-08 21:40:15 train_models(102) -- Model : random_forest, fitted, best score is 0.9313924970273751
+INFO: 2024-01-08 21:40:15 train_models(109) -- ========= Classification Report for model {RandomForestClassifier()}==========
+INFO: 2024-01-08 21:40:15 train_models(110) -- {'0': {'precision': 0.9224806201550387, 'recall': 0.8814814814814815, 'f1-score': 0.9015151515151515, 'support': 135.0}, '1': {'precision': 0.959493670886076, 'recall': 0.974293059125964, 'f1-score': 0.9668367346938775, 'support': 389.0}, 'accuracy': 0.950381679389313, 'macro avg': {'precision': 0.9409871455205574, 'recall': 0.9278872703037228, 'f1-score': 0.9341759431045145, 'support': 524.0}, 'weighted avg': {'precision': 0.949957865831324, 'recall': 0.950381679389313, 'f1-score': 0.9500077008596638, 'support': 524.0}}
+INFO: 2024-01-08 21:40:15 train_models(117) -- ========= AUC ==========
+INFO: 2024-01-08 21:40:15 train_models(119) -- 13053.5
+INFO: 2024-01-08 21:40:15 train_models(121) -- ========= Confusion Matrix ==========
+INFO: 2024-01-08 21:40:15 train_models(123) -- [[119  16]
+ [ 10 379]]
+INFO: 2024-01-08 21:40:15 train_models(136) -- ========= The best models and scores are  ==========
+INFO: 2024-01-08 21:40:15 train_models(137) -- [{'model_name': 'svm', 'best_model': SVC(C=10, gamma='auto'), 'best_score_f1': 0.9621195691462445, 'best_score_precision': 0.9680788754392815, 'best_score_recall': 0.956536227744454, 'best_score_accuracy': 0.9713740458015268, 'best_params': {'C': 10, 'kernel': 'rbf'}}, {'model_name': 'random_forest', 'best_model': RandomForestClassifier(n_estimators=5), 'best_score_f1': 0.9341759431045145, 'best_score_precision': 0.9409871455205574, 'best_score_recall': 0.9278872703037228, 'best_score_accuracy': 0.950381679389313, 'best_params': {'n_estimators': 5}}]
+INFO: 2024-01-08 21:40:15 train_models(138) -- ========= Now trying to find best model  ==========
+INFO: 2024-01-08 21:40:15 train_models(141) -- ========= Predicting test dataset ==========
+INFO: 2024-01-08 21:40:16 train_models(146) -- ************ TEST Classification Report ************
+INFO: 2024-01-08 21:40:16 train_models(147) -- {'0': {'precision': 0.9693251533742331, 'recall': 0.6752136752136753, 'f1-score': 0.795969773299748, 'support': 234.0}, '1': {'precision': 0.8351409978308026, 'recall': 0.9871794871794872, 'f1-score': 0.9048178613396005, 'support': 390.0}, 'accuracy': 0.8701923076923077, 'macro avg': {'precision': 0.9022330756025179, 'recall': 0.8311965811965812, 'f1-score': 0.8503938173196743, 'support': 624.0}, 'weighted avg': {'precision': 0.8854600561595891, 'recall': 0.8701923076923077, 'f1-score': 0.8639998283246558, 'support': 624.0}}
+INFO: 2024-01-09 05:28:06 download_images(153) -- Downloading images PneumoniaMNIST ..... 
+INFO: 2024-01-09 05:28:06 train_models(70) -- Starting training of model using SVM, Random Forest etc..... 
+INFO: 2024-01-09 05:28:06 train_models(81) --  ******* The shape of training dataset is : (4708, 28, 28) ****
+INFO: 2024-01-09 05:28:06 train_models(83) --  ========== The shape of training dataset after transformation : (4708, 784) ****
+INFO: 2024-01-09 05:28:06 train_models(97) -- Fitting model : svm
+INFO: 2024-01-09 06:14:41 train_models(102) -- Model : svm, fitted, best score is 0.9706887847097008
+INFO: 2024-01-09 06:14:41 train_models(109) -- ========= Classification Report for model {SVC(gamma='auto')}==========
+INFO: 2024-01-09 06:14:41 train_models(110) -- {'0': {'precision': 0.9615384615384616, 'recall': 0.9259259259259259, 'f1-score': 0.9433962264150944, 'support': 135.0}, '1': {'precision': 0.9746192893401016, 'recall': 0.987146529562982, 'f1-score': 0.9808429118773946, 'support': 389.0}, 'accuracy': 0.9713740458015268, 'macro avg': {'precision': 0.9680788754392815, 'recall': 0.956536227744454, 'f1-score': 0.9621195691462445, 'support': 524.0}, 'weighted avg': {'precision': 0.9712492287423508, 'recall': 0.9713740458015268, 'f1-score': 0.9711953879510387, 'support': 524.0}}
+INFO: 2024-01-09 06:14:41 train_models(117) -- ========= AUC ==========
+INFO: 2024-01-09 06:14:41 train_models(119) -- 12928.0
+INFO: 2024-01-09 06:14:41 train_models(121) -- ========= Confusion Matrix ==========
+INFO: 2024-01-09 06:14:41 train_models(123) -- [[125  10]
+ [  5 384]]
+INFO: 2024-01-09 06:14:41 train_models(97) -- Fitting model : random_forest
+INFO: 2024-01-09 06:14:49 train_models(102) -- Model : random_forest, fitted, best score is 0.9248061666065632
+INFO: 2024-01-09 06:14:49 train_models(109) -- ========= Classification Report for model {RandomForestClassifier()}==========
+INFO: 2024-01-09 06:14:49 train_models(110) -- {'0': {'precision': 0.8194444444444444, 'recall': 0.8740740740740741, 'f1-score': 0.8458781362007168, 'support': 135.0}, '1': {'precision': 0.9552631578947368, 'recall': 0.9331619537275064, 'f1-score': 0.9440832249674903, 'support': 389.0}, 'accuracy': 0.9179389312977099, 'macro avg': {'precision': 0.8873538011695906, 'recall': 0.9036180139007903, 'f1-score': 0.8949806805841036, 'support': 524.0}, 'weighted avg': {'precision': 0.9202716954600241, 'recall': 0.9179389312977099, 'f1-score': 0.9187822956096383, 'support': 524.0}}
+INFO: 2024-01-09 06:14:49 train_models(117) -- ========= AUC ==========
+INFO: 2024-01-09 06:14:49 train_models(119) -- 12668.0
+INFO: 2024-01-09 06:14:49 train_models(121) -- ========= Confusion Matrix ==========
+INFO: 2024-01-09 06:14:49 train_models(123) -- [[118  17]
+ [ 26 363]]
+INFO: 2024-01-09 06:14:49 train_models(136) -- ========= The best models and scores are  ==========
+INFO: 2024-01-09 06:14:49 train_models(137) -- [{'model_name': 'svm', 'best_model': SVC(C=11, gamma='auto'), 'best_score_f1': 0.9621195691462445, 'best_score_precision': 0.9680788754392815, 'best_score_recall': 0.956536227744454, 'best_score_accuracy': 0.9713740458015268, 'best_params': {'C': 11, 'kernel': 'rbf'}}, {'model_name': 'random_forest', 'best_model': RandomForestClassifier(n_estimators=4), 'best_score_f1': 0.8949806805841036, 'best_score_precision': 0.8873538011695906, 'best_score_recall': 0.9036180139007903, 'best_score_accuracy': 0.9179389312977099, 'best_params': {'n_estimators': 4}}]
+INFO: 2024-01-09 06:14:49 train_models(138) -- ========= Now trying to find best model  ==========
+INFO: 2024-01-09 06:14:49 train_models(141) -- ========= Predicting test dataset ==========
+INFO: 2024-01-09 06:14:49 train_models(146) -- ************ TEST Classification Report ************
+INFO: 2024-01-09 06:14:49 train_models(147) -- {'0': {'precision': 0.9693251533742331, 'recall': 0.6752136752136753, 'f1-score': 0.795969773299748, 'support': 234.0}, '1': {'precision': 0.8351409978308026, 'recall': 0.9871794871794872, 'f1-score': 0.9048178613396005, 'support': 390.0}, 'accuracy': 0.8701923076923077, 'macro avg': {'precision': 0.9022330756025179, 'recall': 0.8311965811965812, 'f1-score': 0.8503938173196743, 'support': 624.0}, 'weighted avg': {'precision': 0.8854600561595891, 'recall': 0.8701923076923077, 'f1-score': 0.8639998283246558, 'support': 624.0}}
+INFO: 2024-01-09 20:14:51 download_images(160) -- Downloading images PneumoniaMNIST ..... 
+INFO: 2024-01-09 20:14:51 train_models(70) -- Starting training of model using SVM, Random Forest etc..... 
+INFO: 2024-01-09 20:14:51 train_models(81) --  ******* The shape of training dataset is : (4708, 28, 28) ****
+INFO: 2024-01-09 20:14:51 train_models(83) --  ========== The shape of training dataset after transformation : (4708, 784) ****
+INFO: 2024-01-09 20:14:51 train_models(97) -- Fitting model : svm
+INFO: 2024-01-09 20:24:18 train_models(102) -- Model : svm, fitted, best score is 0.9706893556342239
+INFO: 2024-01-09 20:24:18 train_models(109) -- ========= Classification Report for model {SVC(gamma='auto')}==========
+INFO: 2024-01-09 20:24:18 train_models(110) -- {'0': {'precision': 0.9615384615384616, 'recall': 0.9259259259259259, 'f1-score': 0.9433962264150944, 'support': 135.0}, '1': {'precision': 0.9746192893401016, 'recall': 0.987146529562982, 'f1-score': 0.9808429118773946, 'support': 389.0}, 'accuracy': 0.9713740458015268, 'macro avg': {'precision': 0.9680788754392815, 'recall': 0.956536227744454, 'f1-score': 0.9621195691462445, 'support': 524.0}, 'weighted avg': {'precision': 0.9712492287423508, 'recall': 0.9713740458015268, 'f1-score': 0.9711953879510387, 'support': 524.0}}
+INFO: 2024-01-09 20:24:18 train_models(117) -- ========= AUC ==========
+INFO: 2024-01-09 20:24:18 train_models(119) -- 12928.0
+INFO: 2024-01-09 20:24:18 train_models(121) -- ========= Confusion Matrix ==========
+INFO: 2024-01-09 20:24:18 train_models(123) -- [[125  10]
+ [  5 384]]
+INFO: 2024-01-09 20:24:18 train_models(97) -- Fitting model : random_forest
+INFO: 2024-01-09 20:24:20 train_models(102) -- Model : random_forest, fitted, best score is 0.9214078621694858
+INFO: 2024-01-09 20:24:20 train_models(109) -- ========= Classification Report for model {RandomForestClassifier()}==========
+INFO: 2024-01-09 20:24:20 train_models(110) -- {'0': {'precision': 0.912, 'recall': 0.8444444444444444, 'f1-score': 0.8769230769230769, 'support': 135.0}, '1': {'precision': 0.9473684210526315, 'recall': 0.9717223650385605, 'f1-score': 0.9593908629441624, 'support': 389.0}, 'accuracy': 0.9389312977099237, 'macro avg': {'precision': 0.9296842105263158, 'recall': 0.9080834047415025, 'f1-score': 0.9181569699336196, 'support': 524.0}, 'weighted avg': {'precision': 0.938256327842507, 'recall': 0.9389312977099237, 'f1-score': 0.9381443913547607, 'support': 524.0}}
+INFO: 2024-01-09 20:24:20 train_models(117) -- ========= AUC ==========
+INFO: 2024-01-09 20:24:20 train_models(119) -- 13056.0
+INFO: 2024-01-09 20:24:20 train_models(121) -- ========= Confusion Matrix ==========
+INFO: 2024-01-09 20:24:20 train_models(123) -- [[114  21]
+ [ 11 378]]
+INFO: 2024-01-09 20:24:20 train_models(136) -- ========= The best models and scores are  ==========
+INFO: 2024-01-09 20:24:20 train_models(137) -- [{'model_name': 'svm', 'best_model': SVC(C=10, gamma='auto'), 'best_score_f1': 0.9621195691462445, 'best_score_precision': 0.9680788754392815, 'best_score_recall': 0.956536227744454, 'best_score_accuracy': 0.9713740458015268, 'best_params': {'C': 10, 'kernel': 'rbf'}}, {'model_name': 'random_forest', 'best_model': RandomForestClassifier(n_estimators=3), 'best_score_f1': 0.9181569699336196, 'best_score_precision': 0.9296842105263158, 'best_score_recall': 0.9080834047415025, 'best_score_accuracy': 0.9389312977099237, 'best_params': {'n_estimators': 3}}]
+INFO: 2024-01-09 20:24:20 train_models(138) -- ========= Now trying to find best model  ==========
+INFO: 2024-01-09 20:24:20 train_models(142) -- Now we know the best model and parameters, retraining with those .......
+INFO: 2024-01-09 20:24:22 train_models(152) -- ************ TEST Classification Report ************
+INFO: 2024-01-09 20:24:22 train_models(153) -- {'0': {'precision': 0.9693251533742331, 'recall': 0.6752136752136753, 'f1-score': 0.795969773299748, 'support': 234.0}, '1': {'precision': 0.8351409978308026, 'recall': 0.9871794871794872, 'f1-score': 0.9048178613396005, 'support': 390.0}, 'accuracy': 0.8701923076923077, 'macro avg': {'precision': 0.9022330756025179, 'recall': 0.8311965811965812, 'f1-score': 0.8503938173196743, 'support': 624.0}, 'weighted avg': {'precision': 0.8854600561595891, 'recall': 0.8701923076923077, 'f1-score': 0.8639998283246558, 'support': 624.0}}
+INFO: 2024-01-09 20:52:12 download_images(182) -- Downloading images PneumoniaMNIST ..... 
+INFO: 2024-01-09 20:52:13 train_models(92) -- Starting training of model using SVM, Random Forest etc..... 
+INFO: 2024-01-09 20:52:13 train_models(103) --  ******* The shape of training dataset is : (4708, 28, 28) ****
+INFO: 2024-01-09 20:52:13 train_models(105) --  ========== The shape of training dataset after transformation : (4708, 784) ****
+INFO: 2024-01-09 20:52:13 train_models(119) -- Fitting model : svm
+INFO: 2024-01-09 21:01:44 train_models(124) -- Model : svm, fitted, best score is 0.9706893556342239
+INFO: 2024-01-09 21:01:45 train_models(131) -- ========= Classification Report for model {SVC(gamma='auto')}==========
+INFO: 2024-01-09 21:01:45 train_models(132) -- {'0': {'precision': 0.9615384615384616, 'recall': 0.9259259259259259, 'f1-score': 0.9433962264150944, 'support': 135.0}, '1': {'precision': 0.9746192893401016, 'recall': 0.987146529562982, 'f1-score': 0.9808429118773946, 'support': 389.0}, 'accuracy': 0.9713740458015268, 'macro avg': {'precision': 0.9680788754392815, 'recall': 0.956536227744454, 'f1-score': 0.9621195691462445, 'support': 524.0}, 'weighted avg': {'precision': 0.9712492287423508, 'recall': 0.9713740458015268, 'f1-score': 0.9711953879510387, 'support': 524.0}}
+INFO: 2024-01-09 21:01:45 train_models(139) -- ========= AUC ==========
+INFO: 2024-01-09 21:01:45 train_models(141) -- 12928.0
+INFO: 2024-01-09 21:01:45 train_models(143) -- ========= Confusion Matrix ==========
+INFO: 2024-01-09 21:01:45 train_models(145) -- [[125  10]
+ [  5 384]]
+INFO: 2024-01-09 21:01:45 train_models(119) -- Fitting model : random_forest
+INFO: 2024-01-09 21:01:47 train_models(124) -- Model : random_forest, fitted, best score is 0.9214094415526691
+INFO: 2024-01-09 21:01:47 train_models(131) -- ========= Classification Report for model {RandomForestClassifier()}==========
+INFO: 2024-01-09 21:01:47 train_models(132) -- {'0': {'precision': 0.8153846153846154, 'recall': 0.7851851851851852, 'f1-score': 0.7999999999999999, 'support': 135.0}, '1': {'precision': 0.9263959390862944, 'recall': 0.9383033419023136, 'f1-score': 0.9323116219667943, 'support': 389.0}, 'accuracy': 0.898854961832061, 'macro avg': {'precision': 0.8708902772354549, 'recall': 0.8617442635437493, 'f1-score': 0.8661558109833971, 'support': 524.0}, 'weighted avg': {'precision': 0.897795693476129, 'recall': 0.898854961832061, 'f1-score': 0.8982237040936698, 'support': 524.0}}
+INFO: 2024-01-09 21:01:47 train_models(139) -- ========= AUC ==========
+INFO: 2024-01-09 21:01:47 train_models(141) -- 12541.0
+INFO: 2024-01-09 21:01:47 train_models(143) -- ========= Confusion Matrix ==========
+INFO: 2024-01-09 21:01:47 train_models(145) -- [[106  29]
+ [ 24 365]]
+INFO: 2024-01-09 21:01:47 train_models(158) -- ========= The best models and scores are  ==========
+INFO: 2024-01-09 21:01:47 train_models(159) -- [{'model_name': 'svm', 'best_model': SVC(C=10, gamma='auto'), 'best_score_f1': 0.9621195691462445, 'best_score_precision': 0.9680788754392815, 'best_score_recall': 0.956536227744454, 'best_score_accuracy': 0.9713740458015268, 'best_params': {'C': 10, 'kernel': 'rbf'}}, {'model_name': 'random_forest', 'best_model': RandomForestClassifier(n_estimators=3), 'best_score_f1': 0.8661558109833971, 'best_score_precision': 0.8708902772354549, 'best_score_recall': 0.8617442635437493, 'best_score_accuracy': 0.898854961832061, 'best_params': {'n_estimators': 3}}]
+INFO: 2024-01-09 21:01:47 train_models(160) -- ========= Now trying to find best model  ==========
+INFO: 2024-01-09 21:01:47 train_models(164) -- Now we know the best model and parameters, retraining with those .......
+INFO: 2024-01-09 21:01:49 train_models(174) -- ************ TEST Classification Report ************
+INFO: 2024-01-09 21:01:49 train_models(175) -- {'0': {'precision': 0.9693251533742331, 'recall': 0.6752136752136753, 'f1-score': 0.795969773299748, 'support': 234.0}, '1': {'precision': 0.8351409978308026, 'recall': 0.9871794871794872, 'f1-score': 0.9048178613396005, 'support': 390.0}, 'accuracy': 0.8701923076923077, 'macro avg': {'precision': 0.9022330756025179, 'recall': 0.8311965811965812, 'f1-score': 0.8503938173196743, 'support': 624.0}, 'weighted avg': {'precision': 0.8854600561595891, 'recall': 0.8701923076923077, 'f1-score': 0.8639998283246558, 'support': 624.0}}

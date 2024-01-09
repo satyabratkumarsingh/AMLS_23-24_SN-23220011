@@ -25,7 +25,7 @@ class PathMNISTImageMultiClassification:
         self.logger.info(train_metrix)
         self.logger.info(train_metrix.shape)
 
-
+    
 
 
 
