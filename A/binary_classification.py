@@ -16,6 +16,10 @@ from sklearn.model_selection import cross_val_score
 from sklearn.model_selection import GridSearchCV, RandomizedSearchCV
 from sklearn.metrics import classification_report, confusion_matrix, recall_score, auc
 import seaborn as sns
+from matplotlib.ticker import PercentFormatter
+import matplotlib.pyplot as plt
+import seaborn as sns
+import time
 
 """ This class combines all the functionlaity for binary classification of the dataset """
 class BinaryClassification:
@@ -46,26 +50,44 @@ class BinaryClassification:
             }
         }
 
-    
-    def plot_confusion_matrix(self, conf_matrix, file_name):
-        """ Plot confusion matrix """
-        group_names = ['True Negative','False Positive','False Negative','True Positive']
-        group_counts = ['{0:0.0f}'.format(value) for value in
-                        conf_matrix.flatten()]
-        group_percentages = ['{0:.2%}'.format(value) for value in
-                     conf_matrix.flatten()/np.sum(conf_matrix)]
-        labels = [f'{v1}\n{v2}\n{v3}' for v1, v2, v3 in
-          zip(group_names,group_counts,group_percentages)]
-        labels = np.asarray(labels).reshape(2,2)
-        plot = sns.heatmap(conf_matrix, annot=labels, fmt='', cmap='Blues')
+    def plot_confusion_matrix(self, y_true, y_pred, filename, labels):
+       
+        cm = confusion_matrix(y_true, y_pred, labels=labels)
+        cm_sum = np.sum(cm, axis=1, keepdims=True)
+        cm_perc = cm / cm_sum.astype(float) * 100
+        annot = np.empty_like(cm).astype(str)
+        nrows, ncols = cm.shape
+        for i in range(nrows):
+            for j in range(ncols):
+                c = cm[i, j]
+                p = cm_perc[i, j]
+                if i == j:
+                    s = cm_sum[i]
+                    if (i == 0 ):
+                        label  = 'TN'
+                    else:
+                       label  = 'TP' 
+                    annot[i, j] = '%.2f%%\n%d/%d\n %s' % (p, c, s, label)
+              
+                else:
+                    if (j == 0 ):
+                        label  = 'FN'
+                    else:
+                       label  = 'FP' 
+                    annot[i, j] = '%.2f%%\n%d\n%s' % (p, c, label)
+        cm = confusion_matrix(y_true, y_pred, labels=labels, normalize='true')
+        cm = pd.DataFrame(cm, index=labels, columns=labels)
+        cm = cm * 100
+        sns.set(font_scale=1.4)
+        plot =  sns.heatmap(cm, annot=annot, fmt='',cbar=True, cbar_kws={'format':PercentFormatter()}, cmap="Blues")
         figure = plot.get_figure()    
-        figure.savefig(file_name)
+        figure.savefig(filename)
         figure.clf()
-
 
     def train_models(self): 
         """ First download and then train models, the models and the options are defined in  self.models 
         """
+        start = time.process_time()
         self.download_images()
         self.logger.info('Starting training of model using SVM, Random Forest etc..... ')
         with np.load("./Datasets/PneumoniaMNIST/pneumoniamnist.npz") as data:
@@ -77,7 +99,7 @@ class BinaryClassification:
 
             test_images = data['test_images']
             test_labels = data['test_labels']
-
+        
         self.logger.info(f' ******* The shape of training dataset is : %s ****', train_images.shape)
         train_images = train_images.reshape(train_images.shape[0], -1)
         self.logger.info(f' ========== The shape of training dataset after transformation : %s ****', train_images.shape)
@@ -121,7 +143,8 @@ class BinaryClassification:
             self.logger.info('========= Confusion Matrix ==========')
             conf_matrix = confusion_matrix(val_labels.ravel(), grid_predictions)
             self.logger.info(conf_matrix)
-            self.plot_confusion_matrix(conf_matrix, model['confusion_matrix_file'])
+            self.plot_confusion_matrix(val_labels.ravel(), grid_predictions, model['confusion_matrix_file'], labels = grid_search_cv.classes_)
+            #self.plot_confusion_matrix(conf_matrix, model['confusion_matrix_file'])
 
             best_model_n_scores.append({
                  'model_name' : model_name, 
@@ -151,8 +174,9 @@ class BinaryClassification:
         test_class_report = classification_report(test_labels.ravel(), test_predictions, output_dict=True)
         self.logger.info('************ TEST Classification Report ************')
         self.logger.info(test_class_report)
-        self.plot_confusion_matrix(conf_matrix, './plots/A/confusion_matrix_test_data_set.jpeg')
-      
+        self.plot_confusion_matrix(test_labels.ravel(), y_pred = test_predictions, filename='./plots/A/confusion_matrix_test_data_set.jpeg', labels = svm_model.classes_ )
+    
+        self.logger.info(f' ============== The time taken to run Binary classification model is %s ==========',  time.process_time() - start)
         
         
     def download_images(self): 
